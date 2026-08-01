@@ -20,9 +20,15 @@ Messages are exchanged as UTF-8 encoded JSON strings. Each message contains thes
 
 # Development Environment
 
-This project was developed with Python 3 and a standard code editor. The code uses built-in libraries for networking, threading, JSON, and datetime handling.
+I developed this software using Visual Studio Code with Git (v2.50.0) for version control
 
-The client also uses the `customtkinter` library to provide a modern graphical interface. Key Python modules include `socket`, `threading`, `json`, `queue`, `datetime`, and `customtkinter`.
+The programming language is Python (v3.14.6) with the following libraries:
+- `sockets`
+- `threading`
+- `json`
+- `datetime`
+- `customtkinter`
+- `queue`
 
 # Useful Websites
 
@@ -32,6 +38,6 @@ The client also uses the `customtkinter` library to provide a modern graphical i
 
 # Future Work
 
-* Add command-line options or a settings screen for selecting host and port values.
+* Add a settings screen for selecting host and port values.
 * Display a list of connected users inside the chat interface.
 * Add support for private messages, file transfer, or message history logging.
