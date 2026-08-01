@@ -31,7 +31,7 @@ def login():
     # Bind the Enter key to the connect callback.
     username_entry.bind("<Return>", lambda event: connect())
 
-    # Validate username input and transition from login to chat.
+    # Validate username input and transition from the login window to chat window.
     def connect():
         # Read the typed username and remove surrounding whitespace.
         username = username_entry.get().strip()
@@ -80,7 +80,7 @@ def start_chat(username):
     window.geometry("600x500")
     window.resizable(False, False)
 
-    # Create the chat display box as read-only.
+    # Create the chat display box as read-only and place the chat display box inside the window with padding..
     chat_box = ctk.CTkTextbox(
         window, 
         width=500, 
@@ -88,7 +88,6 @@ def start_chat(username):
         font=("Segoe UI", 14), 
         state="disabled"
     )
-    # Place the chat box inside the window with padding.
     chat_box.pack(
         padx=20, 
         pady=20, 
