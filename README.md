@@ -1,38 +1,37 @@
 # Overview
 
-{Important!  Do not say in this section that this is college assignment.  Talk about what you are trying to accomplish as a software engineer to further your learning.}
+This project is a Python-based chat application designed to demonstrate practical networking skills, concurrent programming, and GUI design. It combines a server that accepts multiple client connections with a client app that provides a graphical chat interface.
 
-{Provide a description the networking program that you wrote. Describe how to use your software.  If you did Client/Server, then you will need to describe how to start both.}
+The software consists of two programs: `server.py` and `client.py`. Start the server first by running `python server.py` in a terminal. Then run `python client.py` for each chat user, enter a username in the login window, and begin exchanging messages. The server broadcasts all messages to every connected client.
 
-{Describe your purpose for writing this software.}
-
-{Provide a link to your YouTube demonstration.  It should be a 4-5 minute demo of the software running (you will need to show two pieces of software running and communicating with each other) and a walkthrough of the code.}
-
-[Software Demo Video](http://youtube.link.goes.here)
+The purpose of this software is to learn how to build a simple, real-time networked application with reliable message delivery, JSON serialization, and a responsive client UI.
 
 # Network Communication
 
-{Describe the architecture that you used (client/server or peer-to-peer)}
+This chat application uses a client/server architecture. A central server accepts connections from multiple clients and forwards messages to all connected clients/participants.
 
-{Identify if you are using TCP or UDP and what port numbers are used.}
+The application uses TCP for reliable ordered delivery. The server listens on `127.0.0.1:9999`, and each client connects to that same host and port.
 
-{Identify the format of messages being sent between the client and server or the messages sent between two peers.}
+Messages are exchanged as UTF-8 encoded JSON strings. Each message contains these fields:
+- `type`: either `chat` for regular chat messages or `system` for notifications.
+- `username`: the sender's username.
+- `message`: the chat text or system notification.
+- `time`: a timestamp formatted as `HH:MM:SS`.
 
 # Development Environment
 
-{Describe the tools that you used to develop the software}
+This project was developed with Python 3 and a standard code editor. The code uses built-in libraries for networking, threading, JSON, and datetime handling.
 
-{Describe the programming language that you used and any libraries.}
+The client also uses the `customtkinter` library to provide a modern graphical interface. Key Python modules include `socket`, `threading`, `json`, `queue`, `datetime`, and `customtkinter`.
 
 # Useful Websites
 
-{Make a list of websites that you found helpful in this project}
-* [Web Site Name](http://url.link.goes.here)
-* [Web Site Name](http://url.link.goes.here)
+* [Python socket programming documentation](https://docs.python.org/3/library/socket.html)
+* [Python threading documentation](https://docs.python.org/3/library/threading.html)
+* [CustomTkinter documentation](https://customtkinter.tomschimansky.com/)
 
 # Future Work
 
-{Make a list of things that you need to fix, improve, and add in the future.}
-* Item 1
-* Item 2
-* Item 3
+* Add command-line options or a settings screen for selecting host and port values.
+* Display a list of connected users inside the chat interface.
+* Add support for private messages, file transfer, or message history logging.
